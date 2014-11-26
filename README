@@ -1,0 +1,13 @@
+This sample program handles disjoint sets of integer intervals. There is an Interval class and an IntervalSet class. 
+The Interval set holds a disjoint set of Intervals. The Interval class supports 2 operations: splitting and merging. 
+If you add a new Interval to a set and it overlaps with an existing interval, then the intervals are merged. If you 
+remove an interval from the set and it overlaps with one of the intervals in the set, then those intervals are split. 
+Any part of the interval that was covered by the interval to remove, will be removed from the set. 
+
+The add and remove operation perform a linear scan of all of the intervals in the interval set. This could be improved, by
+using a tree structure to find the intervals that maybe overlapped. The current implementation has O(n) performance for
+adding or removing intervals. A tree implementation could perform those operations O(log n)A tree implementation could perform those operations O(log n)A tree implementation could perform those operations O(log n). 
+
+The classes Interval and IntervalSet are implemented in the interval_set.py module. The test_interval_set.py has unnittests
+for these classes. The program intervals.py creates an IntervalSet and adds and removes intervals. It prints out the state 
+of the IntervalSet after each operation.
